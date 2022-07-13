@@ -144,7 +144,7 @@ syn keyword     vTodo               contained TODO FIXME XXX BUG
 hi def link     vTodo               Todo
 
 syn cluster     vCommentGroup       contains=vTodo
-syn region      vComment            start="/\*" end="\*/" contains=@vCommentGroup,@Spell
+syn region      vComment            start="/\*" end="\*/" contains=@vCommentGroup,@Spell transparent fold
 syn region      vComment            start="//" end="$" contains=@vCommentGroup,@Spell
 hi def link     vComment            Comment
 
