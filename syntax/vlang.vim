@@ -82,6 +82,11 @@ hi def link     vRepeat             Repeat
 
 syn match       vCodeGen            /$if\>/
 syn match       vCodeGen            /$else\>/
+syn match       vCodeGen            /$embed_file\>/
+syn match       vCodeGen            /$for\>/
+syn match       vCodeGen            /$env\>/
+syn match       vCodeGen            /$pkgconfig\>/
+
 " XXX Enable when compile-time code-gen is implemented in V
 syn match       vCodeGen            /\.fields\>/
 syn match       vCodeGen            /\.$\i*\>/
@@ -95,7 +100,7 @@ syn keyword     vSignedInts         int i8 i16 i64 isize rune intptr
 syn keyword     vUnsignedInts       byte u16 u32 u64 usize byteptr
 syn keyword     vFloats             f32 f64 floatptr
 " XXX Enable when complex numbers are implemented in V
-" syn keyword    	vComplexes          complex64 complex128
+" syn keyword   vComplexes          complex64 complex128
 
 hi def link     vType               Type
 hi def link     vOptionalType       Type
@@ -122,8 +127,15 @@ hi def link     vBuiltins           Keyword
 syn keyword     vConstants          true false
 hi def link     vConstants          Keyword
 
-syn keyword     vArchs              
-hi def link     vArchs              Keyword
+syn keyword     vPreDeclared        gc_bohem
+syn keyword     vPreDeclared        ios macos darwin mach linux hpux gnu qnx windows freebsd openbsd netbsd bsd dragonfly android termux solaris serenity vinix haiku
+syn keyword     vPreDeclared        x64 x32 amd64 arm64 arm32 rv64 rv32 i386 aarch64
+syn keyword     vPreDeclared        little_endian big_endian
+syn keyword     vPreDeclared        js_node js_browser js_freestanding js es5
+syn keyword     vPreDeclared        debug prod apk test
+syn keyword     vPreDeclared        glibc prealloc no_bounds_checking freestanding threads
+syn keyword     vPreDeclared        interpreter raw all gcc tinyc clang mingw msvc cplusplus
+hi def link     vPreDeclared        Keyword
 
 " Comments; their contents
 syn keyword     vTodo               contained TODO FIXME XXX BUG
@@ -200,7 +212,7 @@ syn match       vImaginary          "\<\d\+\.\d*\([Ee][-+]\d\+\)\?i\>"
 syn match       vImaginary          "\<\.\d\+\([Ee][-+]\d\+\)\?i\>"
 syn match       vImaginary          "\<\d\+[Ee][-+]\d\+i\>"
 " 
-hi def link    	vImaginary          Number
+hi def link     vImaginary          Number
 
 " Generics
 syn match     vGenericBrackets      display contained "[<>]"
