@@ -183,8 +183,8 @@ hi def link     vRawString          String
 
 " Regions
 syn region      vBlock              start="{" end="}" transparent fold
-syn region      vSblock             start='\[' end='\]' transparent fold
-syn region      vConstblock         start="const (" end=")" transparent fold
+syn region      vSqBlock            start='\[\\n' end='\]' transparent fold
+syn region      vConstBlock         start="(\\n" end=")" transparent fold
 syn region      vParen              start='(' end=')' transparent
 
 " Integers
