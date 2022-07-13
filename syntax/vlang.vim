@@ -184,7 +184,7 @@ hi def link     vRawString          String
 " Regions
 syn region      vBlock              start="{" end="}" transparent fold
 syn region      vSqBlock            start='\[\n' end='\n\s*\]' transparent fold
-syn region      vConstBlock         start="\s(\n" end="^)" transparent fold
+syn region      vConstBlock         start="\s(\n" end="\n^)" transparent fold
 syn region      vParen              start='(' end=')' transparent
 
 " Integers
