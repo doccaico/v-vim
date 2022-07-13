@@ -117,9 +117,9 @@ syn match       vDeclaration        contained /\<fn\>/
 
 " Predefined functions and values
 syn keyword     vBuiltins           assert C
-syn keyword     vBuiltins           complex exit imag
+syn keyword     vBuiltins           complex exit
 syn keyword     vBuiltins           print println eprint eprintln
-syn keyword     vBuiltins           malloc copy memdup  isnil
+syn keyword     vBuiltins           malloc copy memdup isnil
 syn keyword     vBuiltins           panic recover
 syn match       vBuiltins           /\<json\.\(encode\|decode\)\>/
 hi def link     vBuiltins           Keyword
@@ -127,15 +127,17 @@ hi def link     vBuiltins           Keyword
 syn keyword     vConstants          true false
 hi def link     vConstants          Keyword
 
-syn keyword     vPreDeclared        gc_bohem
 syn keyword     vPreDeclared        ios macos darwin mach linux hpux gnu qnx windows freebsd openbsd netbsd bsd dragonfly android termux solaris serenity vinix haiku
 syn keyword     vPreDeclared        x64 x32 amd64 arm64 arm32 rv64 rv32 i386 aarch64
-syn keyword     vPreDeclared        little_endian big_endian
+syn keyword     vPreDeclared        gc_bohem little_endian big_endian
 syn keyword     vPreDeclared        js_node js_browser js_freestanding js es5
 syn keyword     vPreDeclared        debug prod apk test
 syn keyword     vPreDeclared        glibc prealloc no_bounds_checking freestanding threads
 syn keyword     vPreDeclared        interpreter raw all gcc tinyc clang mingw msvc cplusplus
 hi def link     vPreDeclared        Keyword
+
+syn keyword     vCompReplace        @FN @VMODROOT @MOD @VEXE @VEXEROOT @METHOD @STRUCT @FILE @LINE @VMOD_FILE @COLUMN @VHASH
+hi def link     vCompReplace        Keyword
 
 " Comments; their contents
 syn keyword     vTodo               contained TODO FIXME XXX BUG
