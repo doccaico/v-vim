@@ -49,7 +49,7 @@ endif
 
 syn case match
 
-syn match       vDeclType           "\<\(struct\|interface\|type\|enum\)\>"
+syn match       vDeclType           "\<\(struct\|union\|interface\|type\|enum\)\>"
 syn keyword     vDeclaration        pub mut var const
 hi def link     vDeclType           Keyword
 hi def link     vDeclaration        Keyword
@@ -81,13 +81,15 @@ syn keyword     vRepeat             for in
 hi def link     vRepeat             Repeat
 
 syn match       vCodeGen            /$if\>/
+syn match       vCodeGen            /$else\>/
 " XXX Enable when compile-time code-gen is implemented in V
-" syn match       vCodeGen            /\.fields\>/
-" syn match       vCodeGen            /\.$\i*\>/
+syn match       vCodeGen            /\.fields\>/
+syn match       vCodeGen            /\.$\i*\>/
 hi def link     vCodeGen            Identifier
 
 " Predefined types
 syn keyword     vType               any chan char map bool string error voidptr
+syn keyword     vType               as is none nil shared static
 syn match       vOptionalType       "\%(\<?\)\@<=\(chan\|map\|bool\|string\|error\|voidptr\)"
 syn keyword     vSignedInts         int i8 i16 i64 isize rune intptr
 syn keyword     vUnsignedInts       byte u16 u32 u64 usize byteptr
@@ -101,7 +103,7 @@ hi def link     vSignedInts         Type
 hi def link     vUnsignedInts       Type
 hi def link     vFloats             Type
 " XXX Enable when complex numbers implemented in V
-" hi def link    	vComplexes          Type
+hi def link    	vComplexes          Type
 
 " Treat fn specially: it's a declaration at the start of a line, but a type
 " elsewhere. Order matters here.
@@ -119,6 +121,9 @@ hi def link     vBuiltins           Keyword
 
 syn keyword     vConstants          true false
 hi def link     vConstants          Keyword
+
+syn keyword     vArchs              
+hi def link     vArchs              Keyword
 
 " Comments; their contents
 syn keyword     vTodo               contained TODO FIXME XXX BUG
@@ -190,12 +195,12 @@ hi def link     Float               Number
 
 " Imaginary literals
 " XXX Enable when complex numbers are implemented in V
-" syn match       vImaginary          "\<\d\+i\>"
-" syn match       vImaginary          "\<\d\+\.\d*\([Ee][-+]\d\+\)\?i\>"
-" syn match       vImaginary          "\<\.\d\+\([Ee][-+]\d\+\)\?i\>"
-" syn match       vImaginary          "\<\d\+[Ee][-+]\d\+i\>"
+syn match       vImaginary          "\<\d\+i\>"
+syn match       vImaginary          "\<\d\+\.\d*\([Ee][-+]\d\+\)\?i\>"
+syn match       vImaginary          "\<\.\d\+\([Ee][-+]\d\+\)\?i\>"
+syn match       vImaginary          "\<\d\+[Ee][-+]\d\+i\>"
 " 
-" hi def link    	vImaginary          Number
+hi def link    	vImaginary          Number
 
 " Generics
 syn match     vGenericBrackets      display contained "[<>]"
