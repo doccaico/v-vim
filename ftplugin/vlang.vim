@@ -4,6 +4,7 @@ endif
 
 setlocal commentstring=//\ %s
 setlocal makeprg=v\ %
+set iskeyword+=@-@
 
 if exists('b:undo_ftplugin')
 	let b:undo_ftplugin .= "|setlocal commentstring< makeprg<"

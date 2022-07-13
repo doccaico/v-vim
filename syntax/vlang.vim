@@ -136,7 +136,7 @@ syn keyword     vPreDeclared        glibc prealloc no_bounds_checking freestandi
 syn keyword     vPreDeclared        interpreter raw all gcc tinyc clang mingw msvc cplusplus
 hi def link     vPreDeclared        Keyword
 
-syn keyword     vCompReplace        \@FN \@VMODROOT \@MOD \@VEXE \@VEXEROOT \@METHOD \@STRUCT \@FILE \@LINE \@VMOD_FILE \@COLUMN \@VHASH
+syn keyword     vCompReplace        @FN @VMODROOT @MOD @VEXE @VEXEROOT @METHOD @STRUCT @FILE @LINE @VMOD_FILE @COLUMN @VHASH
 hi def link     vCompReplace        Keyword
 
 " Comments; their contents
