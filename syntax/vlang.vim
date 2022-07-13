@@ -184,6 +184,7 @@ hi def link     vRawString          String
 " Regions
 syn region      vBlock              start="{" end="}" transparent fold
 syn region      vParen              start='(' end=')' transparent
+syn region      vConstParen         start='const (' end=')' transparent fold
 
 " Integers
 syn match       vDecimalInt         "\<\d\+\([Ee]\d\+\)\?\>"
