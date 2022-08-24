@@ -97,7 +97,7 @@ syn keyword     vType               any chan char map bool string error voidptr
 syn keyword     vType               as is none nil shared static
 syn match       vOptionalType       "\%(\<?\)\@<=\(chan\|map\|bool\|string\|error\|voidptr\)"
 syn keyword     vSignedInts         int i8 i16 i64 isize rune intptr
-syn keyword     vUnsignedInts       byte u16 u32 u64 usize byteptr
+syn keyword     vUnsignedInts       byte u8 u16 u32 u64 usize byteptr
 syn keyword     vFloats             f32 f64 floatptr
 " XXX Enable when complex numbers are implemented in V
 " syn keyword   vComplexes          complex64 complex128
