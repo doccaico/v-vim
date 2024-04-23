@@ -16,8 +16,6 @@ function! _VFormatFile()
 	if exists('g:v_autofmt_bufwritepre') && g:v_autofmt_bufwritepre || exists('b:v_autofmt_bufwritepre') && b:v_autofmt_bufwritepre
 		let substitution = system("v fmt -", join(getline(1, line('$')), "\n"))
 		if v:shell_error != 0
-			echoerr "While formatting the buffer via vfmt, the following error occurred:"
-			echoerr printf("ERROR(%d): %s", v:shell_error, substitution)
 		else
 			let [_, lnum, colnum, _] = getpos('.')
 			%delete
