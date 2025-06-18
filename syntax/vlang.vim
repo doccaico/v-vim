@@ -218,6 +218,10 @@ syn match       vImaginary          "\<\d\+[Ee][-+]\d\+i\>"
 " 
 hi def link     vImaginary          Number
 
+" Slice array[0..5]
+syn match       vSlice              "\<\d..\d\>"
+hi def link     vSlice              Number
+
 " Generics
 syn match     vGenericBrackets      display contained "[<>]"
 syn match     vInterfaceDeclaration display "\s*\zsinterface\s*\i*\s*<[^>]*>" contains=vDeclType,vGenericBrackets
